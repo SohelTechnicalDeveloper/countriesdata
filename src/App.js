@@ -1,27 +1,29 @@
-import logo from './logo.svg';
 import { Fragment, useState } from 'react';
 import Header from './Components/Header';
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
+import Home from './Components/Home';
 import './App.css';
-import Searchbar from './Components/Searchbar';
-import SelectMenu from './Components/SelectMenu';
-import CountriesContainer from './Components/CountriesContainer';
+import CountryDetails from './Components/CountryDetails';
+import CountryCard from './Components/CountryCard';
 
 function App() {
-  const[search,setSearch] = useState('');
+  const [isDark,setIsDark] = useState(false)
+
    
-  return (
-    <Fragment>
+  return (  
+   <>
       <Header/>
-
-      <main>
-        <div className='search-filter-container'>
-           <Searchbar searchProps = {setSearch}/>
-           <SelectMenu/>
-         </div>
-         <CountriesContainer search={search}/>
-      </main>
-
-    </Fragment>
+          {/* <CountryDetails/> */}
+      {/* <BrowserRouter> */}
+        <Routes>
+          <Route path='/country' element={<CountryDetails/>}></Route>
+          <Route path='/countriesCard' element={<Home/>}></Route>
+        </Routes> 
+      {/* </BrowserRouter> */}
+      {/* <Outlet/>
+       <Home/> */}
+      </>
+  
   );
 }
 

@@ -12,6 +12,8 @@ function SelectMenu() {
           <option value="Europe">Europe</option>
           <option value="Oceania">Oceania</option>
        </select>
+
+        
     </Fragment>
   )
 }

@@ -1,10 +1,9 @@
 import React, { Fragment, useEffect, useState } from "react";
-// import CountriesData from "./CountriesData";
 import CountryCard from "./CountryCard";
-import Searchbar from "./Searchbar";
 function CountriesContainer({search}) 
 {
   const[CountriesData,setCountriesData]= useState([])
+
 
   useEffect(()=>{
 
@@ -13,7 +12,7 @@ function CountriesContainer({search})
     .then((data)=>{
       setCountriesData(data)
     })
-    
+
   },[])
     
   return (  

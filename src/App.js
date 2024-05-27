@@ -1,13 +1,12 @@
-import { Fragment, useState } from 'react';
 import Header from './Components/Header';
-import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
+import {  Route, Routes } from 'react-router-dom';
 import Home from './Components/Home';
 import './App.css';
 import CountryDetails from './Components/CountryDetails';
-import CountryCard from './Components/CountryCard';
+import Error from './Components/Error';
+import CountriesContainer from './Components/CountriesContainer';
 
 function App() {
-  const [isDark,setIsDark] = useState(false)
 
    
   return (  
@@ -16,8 +15,11 @@ function App() {
           {/* <CountryDetails/> */}
       {/* <BrowserRouter> */}
         <Routes>
-          <Route path='/country' element={<CountryDetails/>}></Route>
-          <Route path='/countriesCard' element={<Home/>}></Route>
+
+          <Route path='/*' element={<Error/>}  />
+          <Route path='/countriesCard'  element={<Home/>}/>
+          <Route path='/country'  element={<CountryDetails/>}/>
+
         </Routes> 
       {/* </BrowserRouter> */}
       {/* <Outlet/>

@@ -3,9 +3,6 @@
     margin-inline: auto;
     margin-top: 32px;
 }
-.heading-contact{
-    margin-top: 20% !important;
-}
 
 .back-button {
     padding: 6px 24px;
@@ -54,7 +51,7 @@
     font-size: 14px;
 }
 
-@media(max-width: 1500px) {
+@media(max-width: 940px) {
     .country-details {
         flex-direction: column;
         align-items: flex-start;
